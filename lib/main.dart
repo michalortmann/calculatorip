@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Calculator',
       theme: ThemeData(
         primarySwatch: Colors.grey,
+
       ),
       home: const MyHomePage(),
     );
@@ -59,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 5),
         child: Column(
@@ -70,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [ Padding(padding: EdgeInsets.all(20),
                 child: Text(text,
                   textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.white,
+                  style: TextStyle(color: Colors.black,
                       fontSize: 100),
                 ),
               )
@@ -83,12 +84,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   height: 90,
                   width: 90,
-                  child: calcbutton('AC', Colors.white, Colors.black),
+                  child: calcbutton('C', Colors.greenAccent, Colors.black),
                 ),
                 SizedBox(
                   height: 90,
                   width: 90,
-                  child: calcbutton('', Colors.black, Colors.black),
+                  child: calcbutton('⌫', Colors.white, Colors.black),
                 ),
                 SizedBox(
                   height: 90,
@@ -228,7 +229,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void calculation(btnText) {
 
 
-    if(btnText  == 'AC') {
+    if(btnText  == 'C') {
       text ='0';
       numOne = 0;
       numTwo = 0;
